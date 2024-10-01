@@ -1,0 +1,113 @@
+**********************************************************************
+** Visual Studio 2022 Developer PowerShell v17.11.4
+** Copyright (c) 2022 Microsoft Corporation
+**********************************************************************
+PS C:\Users\Boyd\source\repos\Playwright> dotnet new nunit -n Playwright.test -o Test
+The template "NUnit 3 Test Project" was created successfully.
+
+Processing post-creation actions...
+Restoring C:\Users\Boyd\source\repos\Playwright\Test\Playwright.test.csproj:
+  Determining projects to restore...
+  Restored C:\Users\Boyd\source\repos\Playwright\Test\Playwright.test.csproj (in 9.43 sec).
+Restore succeeded.
+
+
+PS C:\Users\Boyd\source\repos\Playwright> dotnet sln add .\Test\PLaywright.TestPlaywright.test.csproj
+Could not find project or directory `.\Test\PLaywright.TestPlaywright.test.csproj`.
+PS C:\Users\Boyd\source\repos\Playwright> dotnet sln add .\Test\Playwright.test.csproj
+Project `Test\Playwright.test.csproj` added to the solution.
+PS C:\Users\Boyd\source\repos\Playwright> dotnet add package Microsoft.Playwright.NUnit
+Could not find any project in `C:\Users\Boyd\source\repos\Playwright\`.
+PS C:\Users\Boyd\source\repos\Playwright> cd test
+PS C:\Users\Boyd\source\repos\Playwright\test> dotnet add package Microsoft.Playwright.NUnit
+  Determining projects to restore...
+  Writing C:\Users\Boyd\AppData\Local\Temp\tmpv3pvwx.tmp
+info : X.509 certificate chain validation will use the default trust store selected by .NET for code signing.
+info : X.509 certificate chain validation will use the default trust store selected by .NET for timestamping.
+info : Adding PackageReference for package 'Microsoft.Playwright.NUnit' into project 'C:\Users\Boyd\source\repos\Playwright\test\Playwright.test.csproj'.
+info :   GET https://api.nuget.org/v3/registration5-gz-semver2/microsoft.playwright.nunit/index.json
+info :   OK https://api.nuget.org/v3/registration5-gz-semver2/microsoft.playwright.nunit/index.json 338ms
+info : Restoring packages for C:\Users\Boyd\source\repos\Playwright\test\Playwright.test.csproj...
+info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.playwright.nunit/index.json
+info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.playwright.nunit/index.json 210ms
+info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.playwright.nunit/1.47.0/microsoft.playwright.nunit.1.47.0.nupkg
+info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.playwright.nunit/1.47.0/microsoft.playwright.nunit.1.47.0.nupkg 161ms
+info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.playwright.testadapter/index.json
+info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.playwright.testadapter/index.json 136ms
+info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.playwright.testadapter/1.47.0/microsoft.playwright.testadapter.1.47.0.nupkg
+info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.playwright.testadapter/1.47.0/microsoft.playwright.testadapter.1.47.0.nupkg 34ms
+info :   CACHE https://api.nuget.org/v3-flatcontainer/microsoft.testplatform.objectmodel/index.json
+info :   GET https://api.nuget.org/v3-flatcontainer/microsoft.testplatform.objectmodel/17.3.0/microsoft.testplatform.objectmodel.17.3.0.nupkg
+info :   OK https://api.nuget.org/v3-flatcontainer/microsoft.testplatform.objectmodel/17.3.0/microsoft.testplatform.objectmodel.17.3.0.nupkg 27ms
+info :   CACHE https://api.nuget.org/v3-flatcontainer/nuget.frameworks/index.json
+info :   GET https://api.nuget.org/v3-flatcontainer/nuget.frameworks/5.11.0/nuget.frameworks.5.11.0.nupkg
+info :   OK https://api.nuget.org/v3-flatcontainer/nuget.frameworks/5.11.0/nuget.frameworks.5.11.0.nupkg 37ms
+info : Installed Microsoft.Playwright.TestAdapter 1.47.0 from https://api.nuget.org/v3/index.json to C:\Users\Boyd\.nuget\packages\microsoft.playwright.testadapter\1.47.0 with content hash hKZPcPWknCYPSajPr16Xrwh0q3C7hx7GO2bmWLZ2uFMS3y+78UeBUBkMwMUJdtZRkHDtQGKRw7uPX8wEuOiDCw==.
+info : Installed Microsoft.Playwright.NUnit 1.47.0 from https://api.nuget.org/v3/index.json to C:\Users\Boyd\.nuget\packages\microsoft.playwright.nunit\1.47.0 with content hash DOvKdrTiAX0S7kK9ppl5ZTa8lWvlChAiplxecNHrCbv3/g2CJCM3P3VFLHlU5/mvwuT7kT6VvblUPRGohLl70w==.
+info : Installed NuGet.Frameworks 5.11.0 from https://api.nuget.org/v3/index.json to C:\Users\Boyd\.nuget\packages\nuget.frameworks\5.11.0 with content hash eaiXkUjC4NPcquGWzAGMXjuxvLwc6XGKMptSyOGQeT0X70BUZObuybJFZLA0OfTdueLd3US23NBPTBb6iF3V1Q==.
+info : Installed Microsoft.TestPlatform.ObjectModel 17.3.0 from https://api.nuget.org/v3/index.json to C:\Users\Boyd\.nuget\packages\microsoft.testplatform.objectmodel\17.3.0 with content hash 6NRzi6QbmWV49Psf8A9z1LTJU4nBrlJdCcDOUyD4Ttm1J2wvksu98GlV+52CkxtpgNsUjGr9Mv1Rbb1/dB06yQ==.
+info :   CACHE https://api.nuget.org/v3/vulnerabilities/index.json
+info :   CACHE https://api.nuget.org/v3-vulnerabilities/2024.09.26.23.39.14/vulnerability.base.json
+info :   CACHE https://api.nuget.org/v3-vulnerabilities/2024.09.26.23.39.14/2024.09.30.11.39.28/vulnerability.update.json
+info : Package 'Microsoft.Playwright.NUnit' is compatible with all the specified frameworks in project 'C:\Users\Boyd\source\repos\Playwright\test\Playwright.test.csproj'.
+info : PackageReference for package 'Microsoft.Playwright.NUnit' version '1.47.0' added to file 'C:\Users\Boyd\source\repos\Playwright\test\Playwright.test.csproj'.
+info : Generating MSBuild file C:\Users\Boyd\source\repos\Playwright\test\obj\Playwright.test.csproj.nuget.g.targets.
+info : Writing assets file to disk. Path: C:\Users\Boyd\source\repos\Playwright\test\obj\project.assets.json
+log  : Restored C:\Users\Boyd\source\repos\Playwright\test\Playwright.test.csproj (in 2.96 sec).
+PS C:\Users\Boyd\source\repos\Playwright\test> dotnet build
+  Determining projects to restore...
+  Restored C:\Users\Boyd\source\repos\Playwright\test\Playwright.test.csproj (in 267 ms).
+  Playwright.test -> C:\Users\Boyd\source\repos\Playwright\test\bin\Debug\net8.0\Playwright.test.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:10.15
+
+Workload updates are available. Run `dotnet workload list` for more information.
+PS C:\Users\Boyd\source\repos\Playwright\test> .\bin\Debug\net8.0\playwright.ps1 install
+PS C:\Users\Boyd\source\repos\Playwright\test>
+PS C:\Users\Boyd\source\repos\Playwright\test> dotnet test
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  Playwright.test -> C:\Users\Boyd\source\repos\Playwright\test\bin\Debug\net8.0\Playwright.test.dll
+Test run for C:\Users\Boyd\source\repos\Playwright\test\bin\Debug\net8.0\Playwright.test.dll (.NETCoreApp,Version=v8.0)
+VSTest version 17.11.0 (x64)
+
+Starting test execution, please wait...
+A total of 1 test files matched the specified pattern.
+
+Passed!  - Failed:     0, Passed:     1, Skipped:     0, Total:     1, Duration: 3 s - Playwright.test.dll (net8.0)
+
+Workload updates are available. Run `dotnet workload list` for more information.
+PS C:\Users\Boyd\source\repos\Playwright\test>
+
+PS C:\Users\Boyd\source\repos\Playwright\test> dotnet test -- Playwright.LaunchOptions.Headless=false
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  Playwright.test -> C:\Users\Boyd\source\repos\Playwright\test\bin\Debug\net8.0\Playwright.test.dll
+Test run for C:\Users\Boyd\source\repos\Playwright\test\bin\Debug\net8.0\Playwright.test.dll (.NETCoreApp,Version=v8.0)
+VSTest version 17.11.0 (x64)
+
+Starting test execution, please wait...
+A total of 1 test files matched the specified pattern.
+
+Passed!  - Failed:     0, Passed:     1, Skipped:     0, Total:     1, Duration: 2 s - Playwright.test.dll (net8.0)
+
+Workload updates are available. Run `dotnet workload list` for more information.
+PS C:\Users\Boyd\source\repos\Playwright\test> dotnet test -- Playwright.LaunchOptions.Headless=false
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  Playwright.test -> C:\Users\Boyd\source\repos\Playwright\test\bin\Debug\net8.0\Playwright.test.dll
+Test run for C:\Users\Boyd\source\repos\Playwright\test\bin\Debug\net8.0\Playwright.test.dll (.NETCoreApp,Version=v8.0)
+VSTest version 17.11.0 (x64)
+
+Starting test execution, please wait...
+A total of 1 test files matched the specified pattern.
+
+Passed!  - Failed:     0, Passed:     1, Skipped:     0, Total:     1, Duration: 20 s - Playwright.test.dll (net8.0)
+
+Workload updates are available. Run `dotnet workload list` for more information.
+PS C:\Users\Boyd\source\repos\Playwright\test>
+
