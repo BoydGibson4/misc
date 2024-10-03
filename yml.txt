@@ -1,0 +1,147 @@
+name: Playwright Tests for Blazor
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the repository
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # Step 2: Set up .NET Core for Blazor WebAssembly
+      - name: Set up .NET Core
+        uses: actions/setup-dotnet@v2
+        with:
+          dotnet-version: '8.0.x'  # Use .NET 8.0 as per your project file
+
+      # Step 3: Install Node.js (required for Playwright)
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18.x'  # Compatible Node.js version
+
+      # Step 4: Install Playwright dependencies
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps
+
+      # Step 5: Restore .NET dependencies
+      - name: Restore .NET dependencies
+        run: dotnet restore
+
+      # Step 6: Build the Blazor project
+      - name: Build the Blazor project
+        run: dotnet build --configuration Release
+
+      # Step 7: Start the Blazor WebAssembly app
+      - name: Start Blazor WebAssembly app
+        run: |
+          dotnet run --project YourBlazorProject.csproj --urls http://localhost:5128 &
+        # Wait for the server to start
+        timeout-minutes: 1
+
+      # Step 8: Run Playwright tests
+      - name: Run Playwright tests
+        run: |
+          npx playwright test --config=playwright.config.js
+
+      # Step 9: Upload Playwright test results (Optional)
+      - name: Upload Playwright test results
+        if: always() # Ensure this runs even if tests fail
+        uses: actions/upload-artifact@v2
+        with:
+          name: playwright-results
+          path: playwright-report/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+name: Playwright Tests for Blazor
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the repository
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # Step 2: Set up .NET Core for Blazor WebAssembly
+      - name: Set up .NET Core
+        uses: actions/setup-dotnet@v2
+        with:
+          dotnet-version: '8.0.x'  # Use .NET 8.0 as per your project file
+
+      # Step 3: Install Node.js (required for Playwright)
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18.x'  # Compatible Node.js version
+
+      # Step 4: Install Playwright dependencies
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps
+
+      # Step 5: Restore .NET dependencies
+      - name: Restore .NET dependencies
+        run: dotnet restore
+
+      # Step 6: Build the Blazor project
+      - name: Build the Blazor project
+        run: dotnet build --configuration Release
+
+      # Step 7: Start Blazor WebAssembly app
+      - name: Start Blazor WebAssembly app
+        run: |
+          dotnet run --project BlazorApp/BlazorApp.csproj --urls http://localhost:5128 &
+        timeout-minutes: 1
+
+      # Step 8: Run Playwright tests
+      - name: Run Playwright tests
+        run: |
+          npx playwright test --config=playwright.config.js
+
+      # Step 9: Upload Playwright test results (Optional)
+      - name: Upload Playwright test results
+        if: always()
+        uses: actions/upload-artifact@v2
+        with:
+          name: playwright-results
+          path: playwright-report/
+
+
